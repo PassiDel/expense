@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        node '15.14.0'
+        nodejs '15.14.0'
     }
 
     stages {
@@ -35,9 +35,11 @@ pipeline {
                     sh 'git commit -m "Deploy by Jenkins"'
                     withCredentials([usernamePassword(credentialsId: 'f9aaa85c-5f26-4e5c-82fa-1c05127a6648', usernameVariable: 'username', passwordVariable: 'password')])
                     {
-                        sh "git push --force --quiet \"https://$username:$password@git.syma.dev/Pascal/expenses.git\" master:gh-pages"
+                        sh "git push --force --quiet \"https://$username:$password@git.syma.dev/Pascal/expense.git\" master:gh-pages"
                     }
                 }
+
+                deleteDir()
             }
         }
     }
