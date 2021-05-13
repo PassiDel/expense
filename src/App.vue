@@ -19,15 +19,13 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
 import Input from './components/Input'
 import Frequency from './enums/Frequency'
 
 export default {
   name: 'App',
   components: {
-    Input,
-    HelloWorld
+    Input
   },
   data () {
     return {
