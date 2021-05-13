@@ -2,12 +2,24 @@
   <div id="app" class="container">
     <b-row class="results">
       <b-col sm="12" offset-md="1" md="10">
-        <b-card header="Result" title="Special title treatment">
-          <b-card-text>With supporting text below as a natural lead-in to additional content.</b-card-text>
-          <p>Income: {{ calculated.yearly.in | currency }}</p>
-          <p>Expenses: {{ calculated.yearly.out | currency }}</p>
-          <p>Profit: <span :class="calculated.yearly.sum < 0 ? 'text-danger' : 'text-success'">{{ calculated.yearly.sum | currency }}</span></p>
-<!--          <b-button variant="primary" size="lg" @click="calculate">Calculate</b-button>-->
+        <b-card header="Result" title="Analysis">
+          <b-card-group class="text-center">
+            <b-card header="Yearly">
+              <p>Income: {{ calculated.yearly.in | currency }}</p>
+              <p>Expenses: {{ calculated.yearly.out | currency }}</p>
+              <p>Profit: <span :class="calculated.yearly.sum < 0 ? 'text-danger' : 'text-success'">{{ calculated.yearly.sum | currency }}</span></p>
+            </b-card>
+            <b-card header="Monthly">
+              <p>Income: {{ calculated.yearly.in/12 | currency }}</p>
+              <p>Expenses: {{ calculated.yearly.out/12 | currency }}</p>
+              <p>Profit: <span :class="calculated.yearly.sum/12 < 0 ? 'text-danger' : 'text-success'">{{ calculated.yearly.sum/12 | currency }}</span></p>
+            </b-card>
+            <b-card header="Daily">
+              <p>Income: {{ calculated.yearly.in/365 | currency }}</p>
+              <p>Expenses: {{ calculated.yearly.out/365 | currency }}</p>
+              <p>Profit: <span :class="calculated.yearly.sum/365 < 0 ? 'text-danger' : 'text-success'">{{ calculated.yearly.sum/365 | currency }}</span></p>
+            </b-card>
+          </b-card-group>
         </b-card>
       </b-col>
     </b-row>
@@ -93,5 +105,25 @@ body {
 }
 .inputs {
   margin-top: 20px;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--gray);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--dark);
+  border-radius: 6px 6px 6px 6px / 12px 12px 12px 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 </style>
