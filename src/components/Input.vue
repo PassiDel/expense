@@ -200,10 +200,10 @@ export default {
 <style>
 /* highlight selected row */
 .b-table-has-details {
-  background: var(--dark);
+  background: var(--gray);
   color: var(--white);
 }
 .b-table-has-details + tr {
-  background: var(--dark);
+  background: var(--gray);
 }
 </style>
