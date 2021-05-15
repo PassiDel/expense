@@ -1,6 +1,40 @@
-# expense
+# expense WIP
 
-> Expense Tracker
+> Basic Expense Tracker to analyse yearly/monthly/daily transactions.
+>
+> Completely cloudless, cookieless and trackingless. All data is stored in LocalStorage.
+>
+> Build with Vue, Webpack, Bootstrap(Vue) and JUI Charts
+
+Hosted here: [expense.syma.dev](https://expense.syma.dev).
+
+![Input fields][input]
+
+![Generated charts][charts]
+
+## Roadmap
+- [x] Data handling
+  - [x] Save/Read from LocalStorage
+  - [x] Import/Export in UI
+- [ ] Input
+  - [x] Name and Frequency
+  - [x] Tagging
+  - [ ] Effective date (of month)
+- [ ] Analysis
+  - [x] Calculate average per day/month/year
+  - [ ] Charts
+    - [x] Basic Pie of every entry
+    - [x] Basic Pie of every tag
+    - [ ] Line
+- [ ] General
+  - [ ] Branding
+    - [ ] Logo
+    - [ ] Name
+    - [ ] Domain
+  - [ ] Rethink UI
+  - [ ] Consider more analysis
+  - [ ] Refactor, clean codebase and upgrade
+  - [ ] Localize
 
 ## Build Setup
 
@@ -24,4 +58,7 @@ npm run unit
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Based on [vuejs-templates/webpack](https://github.com/vuejs-templates/webpack) old template.
+
+[input]: https://expense.syma.dev/static/input.png "Input fields"
+[charts]: https://expense.syma.dev/static/charts.png "Generated charts"
