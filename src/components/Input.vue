@@ -39,6 +39,10 @@
             {{ $enums.Frequency.byId(data.item.frequency).name }}
           </template>
 
+          <template #cell(tags)="data">
+            {{ (data.item.tags ? data.item.tags.length : 0) }}
+          </template>
+
           <template #row-details="row">
             <b-card>
               <b-form @submit.prevent="save(row)">
@@ -82,6 +86,17 @@
                     required></b-form-select>
                 </b-form-group>
 
+                <b-form-group
+                  id="tags-group"
+                  description="Enter new tags separated by comma or semicolon"
+                  label="Tags:"
+                  label-for="tags">
+                  <b-form-tags
+                    id="tags"
+                    separator=",;"
+                    v-model="editingCache.tags"></b-form-tags>
+                </b-form-group>
+
                 <b-button type="submit" variant="success"><b-icon-check /> Save</b-button>
               </b-form>
             </b-card>
@@ -116,6 +131,7 @@ export default {
         'name',
         'amount',
         'frequency',
+        'tags',
         {
           key: 'options',
           label: ''

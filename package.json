@@ -20,7 +20,8 @@
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "vue": "^2.5.2",
-    "vue-enums": "^1.0.0"
+    "vue-enums": "^1.0.0",
+    "vue-graph": "^0.8.7"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
